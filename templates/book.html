@@ -1,0 +1,15 @@
+<!--templates/home.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for book in books %}
+        <div class = "book-entry">
+            <h2>
+                <a href="{% url 'detail_book' book.pk %}">{{ book.title }}</a>
+                </h2>
+                <p>                
+                    {{ book.bookauthor }}<br><b>Рейтинг:</b> {{ book.bookrejtin }}
+                </p>
+        </div>
+    {% endfor %}
+{% endblock content%}

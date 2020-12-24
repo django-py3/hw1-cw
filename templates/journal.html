@@ -1,0 +1,15 @@
+<!--templates/home.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for journal in journals %}
+        <div class = "journal-entry">
+            <h2>
+                <a href="{% url 'detail_journal' journal.pk %}">{{ journal.title }}</a>
+            </h2>
+            <p>
+                {{ journal.journalauthor }}<br><b>Рейтинг:</b> {{ journal.journalrejting }}
+            </p>
+        </div>
+    {% endfor %}
+{% endblock content%}
